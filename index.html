@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptarithmetic CSP Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cryptarithmetic CSP Visualizer</h1>
+
+        <div class="controls">
+            <label for="puzzleInput">Puzzle:</label>
+            <input type="text" id="puzzleInput" value="SEND + MORE = MONEY">
+            <button id="solveBtn">Solve</button>
+            <button id="resetBtn">Reset</button>
+
+            <div class="optimization-toggles">
+                <label><input type="checkbox" id="toggleAC3" checked> AC-3</label>
+                <label><input type="checkbox" id="toggleWeightOrder" checked> Weight Order</label>
+                <label><input type="checkbox" id="toggleBoundsPrune" checked> Bounds Pruning</label>
+                <label><input type="checkbox" id="toggleCarryCheck" checked> Carry Check</label>
+                <label><input type="checkbox" id="toggleStopAfterFirst"> Stop After First</label>
+            </div>
+
+            <div class="step-controls">
+                <button id="prevStepBtn" disabled>&larr; Previous Step</button>
+                <button id="nextStepBtn" disabled>Next Step &rarr;</button>
+                <button id="lastStepBtn" class="jump-btn" disabled>Last Step &raquo;</button>
+            </div>
+        </div>
+
+        <div class="visualization-area">
+            <div class="current-puzzle">
+                <h2>Current Puzzle State</h2>
+                <div id="puzzleDisplay" class="puzzle-equation"></div>
+                <div id="assignmentDisplay" class="current-assignments"></div>
+            </div>
+
+            <div class="letter-domains">
+                <h2>Letter Domains</h2>
+                <div id="domainsGrid"></div>
+            </div>
+
+            <div class="explanation">
+                <h2>Explanation</h2>
+                <p id="stepExplanation">Click 'Solve' to begin the visualization.</p>
+            </div>
+        </div>
+
+        <div class="solutions-output">
+            <h2>Solutions</h2>
+            <div id="solutionsList">No solutions found yet.</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
